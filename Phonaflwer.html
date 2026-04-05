@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phona Flower | فونا فلور - استدامة الجمال</title>
+    
+    <style>
+        /* تعريف الألوان من الهوية البصرية */
+        :root {
+            --primary-green: #556B2F; /* الأخضر العشبي */
+            --accent-yellow: #E3B448; /* الأصفر الخريفي */
+            --rose-red: #8B0000;      /* الأحمر الروز */
+            --soft-cream: #FDFBF7;   /* لون الورق المعاد تدويره */
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--soft-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+
+        /* القسم الرئيسي (Hero) */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #f0f2eb 0%, #ffffff 100%);
+            min-height: 80vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .cta-button {
+            background-color: var(--accent-yellow);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(227, 180, 72, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: var(--rose-red);
+        }
+
+        /* قسم المميزات (المنتجات) */
+        .features {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        /* الفوتر */
+        footer {
+            background: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        /* تنسيقات الجوال */
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PHONA FLOWER</div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#shop">المتجر</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>جمال يدوم.. <br> ذكريات تُزهر من جديد</h1>
+            <p>في فونا فلور، نمنح الزهور الذابلة فرصة ثانية لتكون جزءاً من منزلك بأسلوب فني مستدام وأنيق.</p>
+            <button class="cta-button" onclick="showAlert()">تصفح منتجاتنا الآن</button>
+        </div>
+    </section>
+
+    <section class="features" id="shop">
+        <h2>أعمالنا الفنية</h2>
+        <div class="feature-grid">
+            <div class="card">
+                <span class="icon">🧺</span>
+                <h3>سلال مُعادة التدوير</h3>
+                <p>صناعة يدوية تجمع بين الخيوط الطبيعية وجمال الورد المجفف.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🔖</span>
+                <h3>فواصل كتب</h3>
+                <p>رفيقك المثالي في القراءة، مصنوع من بتلات ورد طبيعية حقيقية.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🎁</span>
+                <h3>أطقم تذكارية</h3>
+                <p>صناديق مخصصة تحفظ باقات مناسباتكم الخاصة للأبد.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>مشروع تخرج: متجر فونا فلور (Phona Flower) &copy; 2026</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">تم التصميم لدعم الاستدامة وإعادة تدوير الطبيعة</p>
+    </footer>
+
+    <script>
+        function showAlert() {
+            alert("مرحباً بك! سيتم قريباً تفعيل سلة المشتريات لطلب باقتك المفضلة.");
+        }
+    </script>
+
+</body>
+</html>
